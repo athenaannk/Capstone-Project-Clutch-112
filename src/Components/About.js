@@ -14,7 +14,7 @@ const About = () => {
       <div className="about-section-text-container">
         <p className="primary-subheading">About</p>
         <h1 className="primary-heading">
-          Food Is An Important Part Of A Balanced Diet
+          Grocery Bills are Up and Food Prices are Continuing to Rise. 
         </h1>
         <p className="primary-text">
          This site is dedicated to find you recipes within your pantry items no matter how few you have all while saving you money!
