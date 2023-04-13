@@ -1,5 +1,7 @@
 import React from "react";
 import AboutBackground from "../Assets/background.jpeg";
+import { FiArrowRight } from "react-icons/fi";
+
 
 
 const About = () => {
@@ -12,7 +14,7 @@ const About = () => {
         <img src={AboutBackground} alt="" />
       </div>
       <div className="about-section-text-container">
-        <p className="primary-subheading">About</p>
+        <h2 className="primary-subheading">About</h2>
         <h1 className="primary-heading">
           Grocery Bills are Up and Food Prices are Continuing to Rise. 
         </h1>
@@ -23,7 +25,7 @@ const About = () => {
        Connect to your local grocery stores to find the items you need at their lowest price!
         </p>
         <div className="about-buttons-container">
-          <button className="secondary-button">Sign Up!</button>
+          <button className="secondary-button">Sign Up!<FiArrowRight />{" "}</button>
      
         </div>
       </div>

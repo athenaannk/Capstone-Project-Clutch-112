@@ -24,7 +24,7 @@ const Work = () => {
   return (
     <div className="work-section-wrapper">
       <div className="work-section-top">
-        <p className="primary-subheading">Work</p>
+        {/* <h2 className="primary-subheading">Work</h2> */}
         <h1 className="primary-heading">How It Works</h1>
         <p className="primary-text">
          Simple. Three. Steps. Enter ingredients you have. Create a shopping list of ingredients you need. Explore local grocery store fliers to find them at their cheapest prices!
