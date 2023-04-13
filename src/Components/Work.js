@@ -27,7 +27,8 @@ const Work = () => {
         {/* <h2 className="primary-subheading">Work</h2> */}
         <h1 className="primary-heading">How It Works</h1>
         <p className="primary-text">
-         Simple. Three. Steps. Enter ingredients you have. Create a shopping list of ingredients you need. Explore local grocery store fliers to find them at their cheapest prices!
+         Three. Simple. Steps. </p>
+         <p className="primary-text">Enter ingredients you have. Create a shopping list of ingredients you need. Explore local grocery store fliers to find them at their cheapest prices!
         </p>
       </div>
       <div className="work-section-bottom">
