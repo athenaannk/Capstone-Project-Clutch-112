@@ -57,7 +57,7 @@ nav {
   transition: 0.2s;
 }
 .navbar-cart-icon {
-  font-size: 3.15rem;
+  font-size: 2.15rem;
 }
 .primary-button:hover {
   background-color: rgb(234, 234, 234);
@@ -107,7 +107,7 @@ nav {
   outline: none;
   border: none;
   border-radius: 5rem;
-  font-size: 2.1rem;
+  font-size: 1.1rem;
   cursor: pointer;
   font-weight: 600;
   color: white;
