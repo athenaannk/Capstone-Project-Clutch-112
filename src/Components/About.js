@@ -1,12 +1,12 @@
 import React from "react";
 import AboutBackground from "../Assets/background.jpeg";
-import { BsFillPlayCircleFill } from "react-icons/bs";
+
 
 const About = () => {
   return (
     <div className="about-section-container">
       <div className="about-background-image-container">
-        {/* <img src={AboutBackground} alt="" /> */}
+        {/* <img src={Circle2} alt="" /> */}
       </div>
       <div className="about-section-image-container">
         <img src={AboutBackground} alt="" />
