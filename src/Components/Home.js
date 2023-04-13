@@ -18,7 +18,7 @@ Broke and Hungry?          </h1>
 Minimal ingredients and even less funds?
           </p>
           <button className="secondary-button">
-            Sign Up Now! <FiArrowRight />{" "}
+            Sign Up! <FiArrowRight />{" "}
           </button>
         </div>
         <div className="home-image-section">
