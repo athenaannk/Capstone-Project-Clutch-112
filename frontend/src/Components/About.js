@@ -7,11 +7,9 @@ import { FiArrowRight } from "react-icons/fi";
 const About = () => {
   return (
     <div className="about-section-container">
-      <div className="about-background-image-container">
-        {/* <img src={Circle2} alt="" /> */}
-      </div>
+  
       <div className="about-section-image-container">
-        <img src={AboutBackground} alt="" />
+        <img className="about" src={AboutBackground} alt="" />
       </div>
       <div className="about-section-text-container">
         {/* <h2 className="primary-subheading">About</h2> */}

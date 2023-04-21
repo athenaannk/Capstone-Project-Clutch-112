@@ -48,13 +48,12 @@ const Navbar = () => {
       </div>
       <div className="navbar-links-container">
         <a href="">Home</a>
-        <a href="">About</a>
-        <a href="">Recipes</a>
-        <a href="">Contact</a>
-        <a href="">
-          <BsCart2 className="navbar-cart-icon" />
-        </a>
-        <button className="primary-button">Sign Up</button>
+        <a href="">Search Recipes</a>
+        <a href="">Shopping List</a>
+     
+        <button className="primary-button1">Register</button>
+        <button className="primary-button2">Login</button>
+
       </div>
       <div className="navbar-menu-container">
         <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
