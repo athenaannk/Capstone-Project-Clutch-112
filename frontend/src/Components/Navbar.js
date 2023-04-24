@@ -47,9 +47,6 @@ const Navbar = () => {
         <img src={Logo} alt="" />
       </div>
       <div className="navbar-links-container">
-        <a href="">Home</a>
-        <a href="">Search Recipes</a>
-        <a href="">Shopping List</a>
      
         <button className="primary-button1">Register</button>
         <button className="primary-button2">Login</button>

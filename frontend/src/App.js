@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import "./App.css";
 import Login from "./Components/Login"
+import Dynamicfield from "./Components/Dynamicfield"
 import Register from "./Components/Register"
 import Home from "./Components/Home";
 import About from "./Components/About"
@@ -15,11 +16,12 @@ function App() {
 
   return (
     <div className="App">
-  
-      <Home />
+      <Dynamicfield/>
+  {/* <Login/> */}
+      {/* <Home />
       <About/>
       <Work/>
-      <Footer/> 
+      <Footer/>  */}
     
     </div>
   );
