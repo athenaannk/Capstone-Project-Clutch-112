@@ -79,7 +79,10 @@ margin-right: 30px;
   transition: 0.2s;
 }
 
-.primary-button:hover {
+.primary-button1:hover {
+  background-color: rgb(36, 204, 36);
+}
+.primary-button2:hover {
   background-color: rgb(36, 204, 36);
 }
 .navbar-menu-container svg {
