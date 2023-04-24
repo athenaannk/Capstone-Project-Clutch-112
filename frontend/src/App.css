@@ -4,6 +4,62 @@
   box-sizing: border-box;
   font-family: raleway;
 }
+
+.auth-form-container, .login-form, .register-form{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-size: x-large;
+  font: raleway;
+}
+
+label{
+  text-align: left;
+  padding: 1rem, 0;
+}
+
+.register-input, .login-input {
+  margin: 1rem, 0;
+}
+
+.register-button, .login-button{
+  padding: .9rem 3rem;
+margin-top: 10px;
+    color: white;
+    background-color: rgb(28, 26, 26);
+    outline: none;
+    border: none;
+    border-radius: 5rem;
+    font-size: 2.1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.register-button, .login-button:hover {
+  background-color: rgb(36, 204, 36);
+}
+
+.register-button2, .login-button2{
+  padding: .9rem 3rem;
+  margin-top: 10px;
+    color: white;
+    background-color: rgb(28, 26, 26);
+    outline: none;
+    border: none;
+    border-radius: 5rem;
+    font-size: 2.1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.register-button2, .login-button2:hover {
+  background-color: rgb(36, 204, 36);
+}
 img {
   max-width: 100%;
   height: auto;
