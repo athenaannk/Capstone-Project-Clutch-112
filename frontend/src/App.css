@@ -445,18 +445,19 @@ footer {
 
 .btningredient1 {
   font-size: x-large;
-  width:10%;
+  width: 10%;
   color: white;
   background-color: rgb(36, 204, 36);
 }
 
 .btningredient2 {
   font-size: x-large;
-  width:10%;
+  width: 10%;
   color: white;
   margin-left: 10px;
   background-color: rgb(36, 204, 36);
 }
+
 .btningredient1:hover {
   background-color: black;
 }
@@ -465,12 +466,12 @@ footer {
   background-color: black;
 }
 
-.btnsubmit{
+.btnsubmit {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top:10px;
-  width:7%;
+  margin-top: 10px;
+  width: 7%;
   padding: 1rem 2.5rem;
   background-color: rgb(36, 204, 36);
   outline: none;
@@ -486,4 +487,64 @@ footer {
 
 .btnsubmit:hover {
   background-color: black;
+}
+
+.loginimg {
+
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.imglogin {
+  width: 50%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.forgot {
+  font-size: small;
+}
+
+.register {
+  font-size: small;
+}
+
+.loginbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  width: 17%;
+  padding: 1rem 8.5rem;
+  background-color: black;
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+  font-size: 2.1rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  transition: 0.2s;
+
+}
+
+.loginbutton:hover {
+  background-color: rgb(36, 204, 36);
+  ;
+}
+
+.inputlogin {
+  font-size: small;
+
+}
+
+.signin {
+  margin-top: -100;
+}
+
+.cardpic {
+  display: flex;
+  margin: auto;
 }

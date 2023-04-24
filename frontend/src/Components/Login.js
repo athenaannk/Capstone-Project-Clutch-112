@@ -1,44 +1,102 @@
 import React from 'react';
-import Loginbackground from "../Assets/loginbackground.png"
-import {MDBContainer, MDBCol, MDBRow, MDBBtn, MDBIcon, MDBInput, MDBCheckbox } from 'mdb-react-ui-kit';
+import Logo from "../Assets/logo.png"
+import Straw from "../Assets/straw.png"
+import {
+  MDBBtn,
+  MDBContainer,
+  MDBCard,
+  MDBCardBody,
+  MDBCardImage,
+  MDBRow,
+  MDBCol,
+  MDBIcon,
+  MDBInput
+}
+from 'mdb-react-ui-kit';
 
 function Login() {
-
   return (
-    <MDBContainer fluid className="logincontainer">
+    <MDBContainer className="my-5">
 
-      <MDBRow>
+      <MDBCard>
+        <MDBRow className='g-0'>
 
-        <MDBCol col='10' md='6'>
-          <img src={Loginbackground} class="img-fluid" alt="Sample image" />
-        </MDBCol>
+          <MDBCol md='6'>
+            <MDBCardImage src={Straw} alt="login form" className='cardpic rounded-start w-100'/>
+          </MDBCol>
 
-        <MDBCol col='4' md='6'>
+          <MDBCol md='6'>
+            <MDBCardBody className='d-flex flex-column'>
+
+              <div className='imglogin d-flex'>
+                <span> 
+                <img src={Logo} ></img>
+                </span>
+              </div>
+
+              <h5 className="signin fw-bold my-4 pb-3" style={{letterSpacing: '4px'}}>Sign into your account</h5>
+
+                <MDBInput className="inputlogin" label='Email address' id='formControlLg' type='email' size="lg"/>
+                <MDBInput className="inputlogin" label='Password' id='formControlLg' type='password' size= "lg"/>
+
+              <MDBBtn className="loginbutton mb-4 px-5" color='dark' size='lg'>Login</MDBBtn>
+              <a className="forgot small text-muted" href="#!">Forgot password?</a>
+              <p className="register mb-5 pb-lg-2" style={{color: '#393f81'}}>Don't have an account? <a href="#!" style={{color: '#393f81'}}>Register here</a></p>
+
+        
+
+            </MDBCardBody>
+          </MDBCol>
+
+        </MDBRow>
+      </MDBCard>
+
+    </MDBContainer>
+  );
+}
+
+export default Login;
+// import React from 'react';
+// import Loginbackground from "../Assets/loginbackground.png"
+// import {MDBContainer, MDBCol, MDBRow, MDBBtn, MDBIcon, MDBInput, MDBCheckbox } from 'mdb-react-ui-kit';
+
+// function Login() {
+
+//   return (
+//     <MDBContainer fluid className="logincontainer">
+
+//       <MDBRow>
+
+//         <MDBCol col='10' md='6'>
+//           <img src={Loginbackground} class="img-fluid" alt="Sample image" />
+//         </MDBCol>
+
+//         <MDBCol col='4' md='6'>
 
        
 
           
 
-          <div className="divider d-flex align-items-center my-4">
-            <p className="text-center fw-bold mx-3 mb-0">Log In</p>
-          </div>
+//           <div className="divider d-flex align-items-center my-4">
+//             <p className="text-center fw-bold mx-3 mb-0">Log In</p>
+//           </div>
 
-          <MDBInput wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg"/>
-          <MDBInput wrapperClass='mb-4' label='Password' id='formControlLg' type='password' size="lg"/>
+//           <MDBInput wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg"/>
+//           <MDBInput wrapperClass='mb-4' label='Password' id='formControlLg' type='password' size="lg"/>
 
-          <div className="d-flex justify-content-between mb-4">
-            <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
-            <a href="!#">Forgot password?</a>
-          </div>
+//           <div className="d-flex justify-content-between mb-4">
+//             <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
+//             <a href="!#">Forgot password?</a>
+//           </div>
 
-          <div className='text-center text-md-start mt-4 pt-2'>
-            <MDBBtn className="loginbutton" size='lg'>Login</MDBBtn>
-            <p className="small fw-bold mt-2 pt-1 mb-2">Don't have an account? <a href="#!" className="link-danger">Register</a></p>
-          </div>
+//           <div className='text-center text-md-start mt-4 pt-2'>
+//             <MDBBtn className="loginbutton" size='lg'>Login</MDBBtn>
+//             <p className="small fw-bold mt-2 pt-1 mb-2">Don't have an account? <a href="#!" className="link-danger">Register</a></p>
+//           </div>
 
-        </MDBCol>
+//         </MDBCol>
 
-      </MDBRow>
+//       </MDBRow>
 
  
 
@@ -47,11 +105,11 @@ function Login() {
 
 
 
-    </MDBContainer>
-  );
-}
+//     </MDBContainer>
+//   );
+// }
 
-export default Login;
+// export default Login;
 // import React, { useState } from "react"
 
 // export const Login = (props) => {
