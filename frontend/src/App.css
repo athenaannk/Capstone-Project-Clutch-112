@@ -35,6 +35,14 @@
 .loginfooter{
   background-color: rgb(36, 204, 36);
 }
+.footer1{
+  margin-right: 30px;
+}
+.footer2{
+  margin-right: 30px;
+}.footer3{
+  margin-right: 30px;
+}
 
 .loginbutton{
   padding: .9rem 3rem;
@@ -323,7 +331,7 @@ footer{
   display: flex;
   align-items: center;
   justify-content: space-between;
-background-color: rgb(36, 204, 36);
+background-image: linear-gradient(79deg, rgb(208, 247, 208), rgb(155, 247, 155)  ,45%, rgb(36, 204, 36));
 min-height: 70px;
 font-size: large;
 }

@@ -12,20 +12,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
-  const [currentForm, setCurrentForm] = useState('login')
-  const toggleForm = (formName) =>{
-    setCurrentForm(formName);
-  }
+
   return (
     <div className="App">
-      {
-      currentForm === "login" ? <Login onFormSwitch={toggleForm}/> : <Register onFormSwitch={toggleForm}/>
-      }
-      {/* <Home />
+  
+      <Home />
       <About/>
       <Work/>
       <Footer/> 
-     */}
+    
     </div>
   );
 }
