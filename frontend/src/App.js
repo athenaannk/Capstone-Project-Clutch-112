@@ -1,7 +1,9 @@
 import React, { useState } from "react"
 import "./App.css";
-import Login from "./Components/Login"
-import Dynamicfield from "./Components/Dynamicfield"
+import Recipes from "./Components/Recipe";
+import IngredientSearch from "./Components/IngredientSearch"
+import IngredientsProvider from "./Context/IngredientsContext";
+import RecipeProvider from "./Context/RecipesContext";
 import Register from "./Components/Register"
 import Home from "./Components/Home";
 import About from "./Components/About"
@@ -16,12 +18,17 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Dynamicfield/> */}
-  <Login/>
-      {/* <Home />
-      <About/>
+      <RecipeProvider>
+     <IngredientsProvider>
+  {/* <Login/> */}
+      {/* <Home />  */}
+      <IngredientSearch/>
+      <Recipes/>
+       {/* <About/>
       <Work/>
       <Footer/>  */}
+      </IngredientsProvider>
+      </RecipeProvider>
     
     </div>
   );

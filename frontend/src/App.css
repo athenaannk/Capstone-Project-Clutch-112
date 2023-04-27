@@ -381,113 +381,6 @@ footer {
   height: 190px;
 }
 
-.d-flex1 {
-  margin: auto;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 65%;
-
-}
-
-.dish1 {
-  font-size: 10px;
-
-  margin: auto;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-
-}
-
-.diet1 {
-  font-size: 10px;
-
-  margin: auto;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-
-}
-
-.allergy1 {
-
-  font-size: 10px;
-  margin: auto;
-
-  padding: 10px;
-
-}
-
-.formtitle {
-  display: flex;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  align-items: center;
-  justify-content: center;
-}
-
-.form-control {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20%;
-}
-
-.form-check-label1,
-.form-check-input1 {
-  margin: auto;
-  flex-wrap: wrap;
-}
-
-.form-label {
-  display: flex;
-}
-
-.btningredient1 {
-  font-size: x-large;
-  width: 10%;
-  color: white;
-  background-color: rgb(36, 204, 36);
-}
-
-.btningredient2 {
-  font-size: x-large;
-  width: 10%;
-  color: white;
-  margin-left: 10px;
-  background-color: rgb(36, 204, 36);
-}
-
-.btningredient1:hover {
-  background-color: black;
-}
-
-.btningredient2:hover {
-  background-color: black;
-}
-
-.btnsubmit {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-  width: 7%;
-  padding: 1rem 2.5rem;
-  background-color: rgb(36, 204, 36);
-  outline: none;
-  border: none;
-  border-radius: 5rem;
-  font-size: 2.1rem;
-  cursor: pointer;
-  font-weight: 600;
-  color: white;
-  transition: 0.2s;
-
-}
-
-.btnsubmit:hover {
-  background-color: black;
-}
 
 .loginimg {
 
@@ -547,4 +440,62 @@ footer {
 .cardpic {
   display: flex;
   margin: auto;
+}
+
+.ingredientsearchbutton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  width: 7%;
+  padding: 1rem 8.5rem;
+  background-color: black;
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+  font-size: 2.1rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  transition: 0.2s;
+}
+
+.addingredientbutton{
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    width: 1%;
+    padding: -1rem;
+   
+    background-color: black;
+    outline: none;
+    border: none;
+    border-radius: 50rem;
+    font-size: 2.1rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+    transition: 0.2s;
+  
+  
+}
+
+.ingredientform{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.formtext{
+  text-align: center;
+  font: raleway;
+}
+
+.ingredientinput{
+  font-size:x-large;
+  height: 50%;
+  margin-right: 10px;
 }
