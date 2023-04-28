@@ -16,7 +16,7 @@ const ingredientCheck = (arr) => {
 };
 
 const healthEntry = (input) => {
-  if (input === "" || input === "any" || input === "health type") {
+  if (input === "" || input === "any" || input === "Health Concerns") {
     return "";
   } else {
     return `&health=${input}`;
@@ -24,7 +24,7 @@ const healthEntry = (input) => {
 };
 
 const cuisineEntry = (input) => {
-  if (input === "" || input === "any" || input === "select cuisine") {
+  if (input === "" || input === "any" || input === "Select Cuisine") {
     return "";
   } else if (input.split(" ").length > 1) {
     return `&cuisineType=${input.split(" ").join("%20")}`;
@@ -34,7 +34,7 @@ const cuisineEntry = (input) => {
 };
 
 const mealTypeEntry = (input) => {
-  if (input === "" || input === "any" || input === "meal type") {
+  if (input === "" || input === "any" || input === "Meal Type") {
     return "";
   } else {
     return `&mealType=${input}`;
@@ -60,7 +60,7 @@ const apiQuery = async (queryIngredients, health, cuisine, meal) => {
 
 //lists key words from edamam api
 export const cuisines = [
-    "Select Cuisine",
+   
     "Any",
     "American",
     "Asian",
@@ -70,9 +70,11 @@ export const cuisines = [
     "Chinese",
     "Eastern Europe",
     "French",
+    "Greek",
     "Indian",
     "Italian",
     "Japanese",
+    "Korean",
     "Kosher",
     "Mediterranean",
     "Mexican",
@@ -80,19 +82,23 @@ export const cuisines = [
     "Nordic",
     "South American",
     "South East Asian",
+    "World",
   ];
   
   export const meals = [
-    "Meal type",
+   
     "Any",
     "Breakfast",
     "Lunch",
+    "Starter",
     "Dinner",
+    "Side Dish",
+    "Desserts",
     "Snack",
   ];
   
   export const health = [
-    "Health type",
+  
     "Any",
     "Alcohol-cocktail",
     "Alcohol-free",

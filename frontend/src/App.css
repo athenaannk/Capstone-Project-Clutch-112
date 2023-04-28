@@ -284,7 +284,7 @@ nav {
   font-size: 1.5rem;
 }
 
-.secondary-button:hover {
+.secondary-button,:hover {
   background-color: black;
 }
 
@@ -442,60 +442,57 @@ footer {
   margin: auto;
 }
 
-.ingredientsearchbutton{
+
+
+
+
+.ingredientform {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10px;
-  width: 7%;
-  padding: 1rem 8.5rem;
+}
+
+.formtext {
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.ingredientinput {
+  margin-right: 10px;
+  width: 80%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  height: 50%;
+}
+
+.addbutton {
+
   background-color: black;
+  border: none;
   outline: none;
   border: none;
   border-radius: 5rem;
-  font-size: 2.1rem;
-  cursor: pointer;
-  font-weight: 600;
-  color: white;
-  transition: 0.2s;
+
 }
 
-.addingredientbutton{
-  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    width: 1%;
-    padding: -1rem;
-   
-    background-color: black;
-    outline: none;
-    border: none;
-    border-radius: 50rem;
-    font-size: 2.1rem;
-    cursor: pointer;
-    font-weight: 600;
-    color: white;
-    transition: 0.2s;
-  
-  
-}
-
-.ingredientform{
+form {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
-.formtext{
-  text-align: center;
-  font: raleway;
+select {
+  font-size: large;
+  margin-top: 17;
+  max-width: 200px;
+  width: 200px;
 }
 
-.ingredientinput{
-  font-size:x-large;
-  height: 50%;
-  margin-right: 10px;
+h4 {
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
+
+

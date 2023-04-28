@@ -13,7 +13,7 @@ const Home = () => {
         </div>
         <div className="home-text-section">
           <h1 className="primary-heading">
-Broke and Hungry?          </h1>
+Broke & Hungry?          </h1>
           <p className="primary-text">
 Minimal ingredients and even less funds?
           </p>

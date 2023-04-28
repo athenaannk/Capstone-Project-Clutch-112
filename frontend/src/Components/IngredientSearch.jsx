@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+import Navbar from "./Navbar2";
+import Logo from "../Assets/logo.png";
 import { useIngredientsContext } from "../Context/IngredientsContext";
 import { useRecipesContext } from "../Context/RecipesContext";
 import { cuisines, meals, health } from "../Api/api";
+import Button from 'react-bootstrap/Button';
+
 import apiQuery from "../Api/api";
 
 const Ingredients = () => {
@@ -10,7 +14,7 @@ const Ingredients = () => {
   const [mealTypeEntry, setMealTypeEntry] = useState("");
   const [healthEntry, setHealthEntry] = useState("");
 
-  const { ingredients, addIngredient } = useIngredientsContext() ;
+  const { ingredients, addIngredient } = useIngredientsContext();
   const { recipes, setRecipes } = useRecipesContext();
 
   const apiCall = async (e) => {
@@ -23,7 +27,7 @@ const Ingredients = () => {
     );
     setRecipes(getRecipes);
   };
-//airhandle
+  //airhandle
   const handleInputChange = (e) => {
     e.preventDefault();
     if (newIngredientEntry === "") {
@@ -35,7 +39,7 @@ const Ingredients = () => {
       setNewIngredientEntry("");
     }
   };
-
+//targe this is a method that notes for change in state of a react component. takes event as parameter and does something and changes state.
   const handleIngredientEntry = (e) => {
     const { target } = e;
     const inputValue = target.value;
@@ -61,79 +65,93 @@ const Ingredients = () => {
     setHealthEntry(selectValue);
   };
 
-   
-return(<div className="flex flex-col gap-3 md:w-5/6 lg:w-3/6 border-solid border-2 border-slate-200 rounded-md bg-slate-100 shadow-md p-5">
-<h3 className="formtext">
-  Whatcha cooking with? Type in the ingredient and click "Add" to enter any other ingredients you have in your pantry to find recipes that contain them!
 
-</h3>
-<form className="ingredientform">
-  <input
-    className="ingredientinput"
-    type="text"
-    placeholder="Ingredients"
-    onChange={handleIngredientEntry}
-    value={newIngredientEntry}
-  />
-  <button
-    onClick={handleInputChange}
-    type="submit"
-    className="addingredientbutton"
-  >
-    <p className=" text-md">+</p>
-  </button>
+  return (
+    <div className="home-text-section">
+<Navbar/>
 
-  <select onChange={changeCuisine} className="flex-ro">
-    <option
-      value="Cuisine type"
-      defaultValue="Cuisine type"
-      disabled
-      hidden
-    >
-      Cuisine type
-    </option>
-    {cuisines.map((cuisine) => (
-      <option key={cuisine} value={cuisine.toLowerCase()}>
-        {cuisine}
-      </option>
-    ))}
-  </select>
+      <h3 className="primary-heading">
+        Whatcha Cooking, Good Looking?  </h3>
+        <p className="primary-text">
+        Add ingredients you have in your pantry to find recipes that contain them!           </p>
 
-  <select onChange={changeMeal} className="h-[35px] rounded pl-1">
-    <option value="Meal type" defaultValue="Meal type" disabled hidden>
-      Meal Type
-    </option>
-    {meals.map((meal) => (
-      <option key={meal} value={meal.toLowerCase()}>
-        {meal}
-      </option>
-    ))}
-  </select>
+      <form className="ingredientform">
 
-  <select onChange={changeHealth} className="h-[35px] rounded pl-1">
-    <option
-      value="Health type"
-      defaultValue="Health type"
-      disabled
-      hidden
-    >
-      Health Type
-    </option>
-    {health.map((type) => (
-      <option key={type} value={type.toLowerCase()}>
-        {type}
-      </option>
-    ))}
-  </select>
-
-  <button
-    type="submit"
-    className="ingredientsearchbutton"
-    onClick={apiCall}
-  >Search
-  </button>
+        <input
+          className="ingredientinput"
+          type="text"
+          placeholder="Ingredients"
+          onChange={handleIngredientEntry}
+          value={newIngredientEntry}
+        />
+        <Button className="addbutton" onClick={handleInputChange} type="submit" size="lg">
+          Add
+        </Button>{' '}
+      </form>
+      <form>
+<h4>Select Cuisine Type</h4>
 </form>
-</div>)
+<form>
+        <select onChange={changeCuisine}>
+          <option
+            value="Cuisine Type"
+            defaultValue="Cuisine Type"
+            disabled
+            hidden
+          >
+            Cuisine Type
+          </option>
+          {cuisines.map((cuisine) => (
+            <option key={cuisine} value={cuisine.toLowerCase()}>
+              {cuisine}
+            </option>
+          ))}
+        </select>
+      </form>
+      <form>
+      <h4>Select Meal Type</h4>
+</form>
+<form>
+        <select onChange={changeMeal}>
+          <option value="Meal Type" defaultValue="Meal Type" disabled hidden>
+            Meal Type
+          </option>
+          {meals.map((meal) => (
+            <option key={meal} value={meal.toLowerCase()}>
+              {meal}
+            </option>
+          ))}
+        </select>
+      </form>
+      <form>
+      <h4>Select Health or Allergy Concern</h4>
+</form>
+<form>
+        <select onChange={changeHealth} >
+          <option
+            value="Health Concerns"
+            defaultValue="Health Concerns"
+            disabled
+            hidden
+          >
+            Health Concerns
+          </option>
+          {health.map((type) => (
+            <option key={type} value={type.toLowerCase()}>
+              {type}
+            </option>
+          ))}
+        </select>
+      </form>
+      <form>
+        <button
+          type="submit"
+          className="secondary-button"
+          onClick={apiCall}
+        >Search
+        </button>
+      </form>
+    </div>)
 }
 
 export default Ingredients
