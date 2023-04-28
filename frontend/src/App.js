@@ -23,7 +23,7 @@ function App() {
   {/* <Login/> */}
       {/* <Home />  */}
       <IngredientSearch/>
-      <Recipes/>
+      {/* <Recipes/> */}
        {/* <About/>
       <Work/>
       <Footer/>  */}
