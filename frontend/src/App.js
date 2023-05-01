@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import "./App.css";
+import Login from "./Components/Login";
 import Recipes from "./Components/Recipe";
 import IngredientSearch from "./Components/IngredientSearch"
 import IngredientsProvider from "./Context/IngredientsContext";
@@ -18,17 +19,13 @@ function App() {
 
   return (
     <div className="App">
-      <RecipeProvider>
-     <IngredientsProvider>
-  {/* <Login/> */}
-      {/* <Home />  */}
-      <IngredientSearch/>
-      {/* <Recipes/> */}
-       {/* <About/>
-      <Work/>
-      <Footer/>  */}
-      </IngredientsProvider>
-      </RecipeProvider>
+<RecipeProvider>
+<IngredientsProvider>
+<IngredientSearch/>
+<Recipes/>
+</IngredientsProvider>
+</RecipeProvider>
+    
     
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from "../Assets/logo.png"
-import Straw from "../Assets/straw.png"
+import Video from "../Assets/video.mp4"
 import {
   MDBBtn,
   MDBContainer,
@@ -22,8 +22,14 @@ function Login() {
         <MDBRow className='g-0'>
 
           <MDBCol md='6'>
-            <MDBCardImage src={Straw} alt="login form" className='cardpic rounded-start w-100'/>
-          </MDBCol>
+          <video
+          src= {Video}
+          controls
+          muted
+          autoPlay={"autoplay"}
+          preLoad="auto"
+          loop
+        > something</video>          </MDBCol>
 
           <MDBCol md='6'>
             <MDBCardBody className='d-flex flex-column'>

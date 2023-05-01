@@ -64,8 +64,24 @@
   transition: 0.2s;
 }
 
+.imglogin{
+  width: 75%;
+  text-align: center;
+  justify-content: center;
+}
+
 .loginbutton:hover {
   background-color: rgb(36, 204, 36);
+}
+
+.signin{
+  justify-content: center;
+  text-align: center;
+}
+
+.inputlogin {
+  text-align: center;
+  justify-content: center;
 }
 
 /* .auth-form-container, .login-form, .register-form{
@@ -242,6 +258,7 @@ nav {
   flex: 1;
 }
 
+
 .home-text-section {
   flex: 1;
   display: flex;
@@ -284,7 +301,7 @@ nav {
   font-size: 1.5rem;
 }
 
-.secondary-button,:hover {
+.secondary-button:hover {
   background-color: black;
 }
 
@@ -382,19 +399,7 @@ footer {
 }
 
 
-.loginimg {
 
-  width: 50%;
-  align-items: center;
-  justify-content: center;
-}
-
-.imglogin {
-  width: 50%;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
-}
 
 .forgot {
   font-size: small;
@@ -499,6 +504,11 @@ h4 {
  
  width: 600px;
   flex: 1;
+  
+}
+
+video{
+  width:100%;
   
 }
 

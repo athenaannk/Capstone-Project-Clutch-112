@@ -88,6 +88,8 @@ const Ingredients = () => {
           onChange={handleIngredientEntry}
           value={newIngredientEntry}
         />
+        </form>
+        <form>
         <Button className="addbutton" onClick={handleInputChange} type="submit" size="lg">
           Add
         </Button>{' '}
@@ -156,25 +158,6 @@ const Ingredients = () => {
         </button>
       </form>
 
-      <carousel id="carouselExampleSlidesOnly" className="mx-auto home-image-section2" data-mdb-ride="carousel">
-        <carousel className="home-banner-container">
-          <carousel className="home-bannerImage-container">
-            <img src= {Cone} className="d-block w-100" alt="Wild Landscape" />
-          </carousel>
-          <carousel class="carousel-item">
-            <img src= {Donut} className="d-block w-100" alt="Camera" />
-          </carousel>
-          <carousel class="carousel-item">
-            <img src= {Grape} className="d-block w-100" alt="Exotic Fruits" />
-          </carousel>
-          <carousel class="carousel-item">
-            <img src= {Lemon} className="d-block w-100" alt="Exotic Fruits" />
-          </carousel>
-          <carousel class="carousel-item">
-            <img src= {Straw} className="d-block w-100" alt="Exotic Fruits" />
-          </carousel>
-        </carousel>
-        </carousel>
 
 
     </div>)
