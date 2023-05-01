@@ -16,12 +16,12 @@ from 'mdb-react-ui-kit';
 
 function Login() {
   return (
-    <MDBContainer className="my-5">
+    <MDBContainer className="logincontainer">
 
       <MDBCard>
-        <MDBRow className='g-0'>
+        <MDBRow className=''>
 
-          <MDBCol md='6'>
+          <MDBCol md='7'>
           <video
           src= {Video}
           controls
@@ -31,7 +31,7 @@ function Login() {
           loop
         > something</video>          </MDBCol>
 
-          <MDBCol md='6'>
+          <MDBCol md='4'>
             <MDBCardBody className='d-flex flex-column'>
 
               <div className='imglogin d-flex'>
@@ -40,7 +40,7 @@ function Login() {
                 </span>
               </div>
 
-              <h5 className="signin fw-bold my-4 pb-3" style={{letterSpacing: '4px'}}>Sign into your account</h5>
+              <h5 className="signin fw-bold my-4 pb-3 mx-auto" style={{letterSpacing: '4px'}}>Sign into your account</h5>
 
                 <MDBInput className="inputlogin" label='Email address' id='formControlLg' type='email' size="lg"/>
                 <MDBInput className="inputlogin" label='Password' id='formControlLg' type='password' size= "lg"/>

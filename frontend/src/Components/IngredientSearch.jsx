@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
-import Cone from "../Assets/cone.png";
-import Donut from"../Assets/donut.png";
-import Grape from "../Assets/grape.png";
-import Lemon from "../Assets/lemon.png";
-import Straw from "../Assets/straw.png"
+import { AiOutlineClose } from "react-icons/ai";
 import { useIngredientsContext } from "../Context/IngredientsContext";
 import { useRecipesContext } from "../Context/RecipesContext";
 import { cuisines, meals, health } from "../Api/api";
@@ -18,7 +14,7 @@ const Ingredients = () => {
   const [mealTypeEntry, setMealTypeEntry] = useState("");
   const [healthEntry, setHealthEntry] = useState("");
 
-  const { ingredients, addIngredient } = useIngredientsContext();
+  const { ingredients, addIngredient, removeIngredient } = useIngredientsContext();
   const { recipes, setRecipes } = useRecipesContext();
 
   const apiCall = async (e) => {
@@ -71,15 +67,16 @@ const Ingredients = () => {
 
 
   return (
-    <div className="home-text-section">
-      <Navbar />
-
+    <div className="home-container">
+      <Navbar/>
+<div className="home-banner-container">
+  <div className="home-text-section">
       <h3 className="primary-heading">
         Whatcha Cooking, Good Looking?  </h3>
       <p className="primary-text">
         Add ingredients you have in your pantry to find recipes that contain them!           </p>
 
-      <form className="ingredientform">
+      <form>
 
         <input
           className="ingredientinput"
@@ -88,12 +85,27 @@ const Ingredients = () => {
           onChange={handleIngredientEntry}
           value={newIngredientEntry}
         />
-        </form>
-        <form>
+      
         <Button className="addbutton" onClick={handleInputChange} type="submit" size="lg">
-          Add
+        Add
         </Button>{' '}
       </form>
+      
+      <ul className="flex flex-row flex-wrap w-full gap-5  items-center justify-around">
+          {ingredients.map((ingredient) => (
+            <li
+              key={ingredient}
+              value={ingredient}
+              className="flex flex-col items-center md:w-[50px] lg:w-[100px]"
+            >
+              <p className="text-indigo-600">{ingredient.toLowerCase()}</p>{" "}
+              <AiOutlineClose
+                className="hover:cursor-pointer hover:scale-125 hover:rotate-180 transition-all"
+                onClick={() => removeIngredient(ingredient)}
+              />
+            </li>
+          ))}
+        </ul>
       <form>
         <h4>Select Cuisine Type</h4>
       </form>
@@ -152,13 +164,13 @@ const Ingredients = () => {
       <form>
         <button
           type="submit"
-          className="secondary-button"
+          className="secondary-button3"
           onClick={apiCall}
         >Search
         </button>
       </form>
-
-
+      </div>
+</div>
 
     </div>)
 }

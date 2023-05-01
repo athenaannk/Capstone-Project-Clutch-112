@@ -8,9 +8,7 @@ const Home = () => {
     <div className="home-container">
       <Navbar />
       <div className="home-banner-container">
-        <div className="home-bannerImage-container">
-          {/* <img src={Circle} alt="" /> */}
-        </div>
+    
         <div className="home-text-section">
           <h1 className="primary-heading">
 Broke & Hungry?          </h1>

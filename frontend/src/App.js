@@ -19,12 +19,16 @@ function App() {
 
   return (
     <div className="App">
-<RecipeProvider>
-<IngredientsProvider>
-<IngredientSearch/>
-<Recipes/>
-</IngredientsProvider>
-</RecipeProvider>
+<Home/>
+<About/>
+    <RecipeProvider>
+      <IngredientsProvider>
+        <IngredientSearch/>
+        <Recipes/>
+      </IngredientsProvider>
+    </RecipeProvider>
+  
+
     
     
     </div>

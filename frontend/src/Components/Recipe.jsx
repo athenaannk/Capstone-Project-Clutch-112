@@ -1,53 +1,80 @@
 import React from "react";
+
+
+
 import { useRecipesContext } from "../Context/RecipesContext";
 
 const Recipes = () => {
   const { recipes } = useRecipesContext();
 
 
-
   const mappedRecipes = !recipes
     ? ""
     : recipes.map((recipe, index) => (
-        <li
-          key={recipe.label + index}
-          className="flex flex-col items-center border-solid border-2 border-slate-200 rounded-lg shadow-md bg-slate-200 p-2 w-full md:w-[200px]"
-        >
-          <h1 className="font-bold text-lg text-indigo-500 text-center ">
-            {recipe.label}
-          </h1>
-          <div>
-            <div className="flex flex-row gap-5 items-center">
-              <a href={`${recipe.url}`} target="_blank" rel="noreferrer">
-                Recipe Link
-              </a>
-    
+
+      // <div className="about-section-container">
+
+        /* < className="about-section-text-container"> */
+
+          <div className="card w-96 bg-base-100 shadow-xl">
+          
+            <figure className="px-10 pt-10">
+            <img src={`${recipe.image}`} />
+            </figure>
+            <div className="recipecard-body">
+              <h2 className="recipecard-title">{`${recipe.label}`}</h2>
+              <div className="recipecard-actions justify-end">
+                <button className="secondary-button">Full Recipe</button>
+
+              </div>
             </div>
-          </div>
-          <img
-            className="w-40"
-            src={`${recipe.image}`}
-            alt={`${recipe.label}`}
-          />
-        </li>
-    ));
+       
+        </div>
+   
+    )
+    )
+
+
 
   return (
-    <div className="border-solid border-2 border-slate-200 rounded-md bg-slate-100 shadow-md p-2 lg:max-w-[1260px]">
-      <h2 className="font-bold text-lg text-center">Recipes</h2>
- 
-      <ul className="flex flex-col md:flex-row md:flex-wrap md:justify-around items-center gap-2 max-h-[400px] overflow-y-scroll">
 
-        {!mappedRecipes ? (
-          <div className="italic">
-            Search for recipes by clicking "Search Recipes"!
-          </div>
-        ) : (
-          mappedRecipes
-        )}
-      </ul>
-    </div>
-  );
-        
-        }    
+
+<div className="about-section-container">
+<div className="about-section-image-container">
+        <img className="about"  alt="" />
+      </div>
+
+<div className="about-section-text-container">
+  {/* <h2 className="primary-subheading">About</h2> */}
+  <h1 className="primary-heading">
+    I Got Beans Greens Potatoes Tomatoes You Name It!
+  </h1>
+  <p className="primary-text">
+Check it out!  </p>
+
+
+
+    <div className="">
+
+{!mappedRecipes ? (
+  <div className="primary-text">
+  </div>
+) : (
+  mappedRecipes
+)}
+  </div>
+  </div>
+</div>
+
+
+
+
+  )
+}
+
+
+
+
+
+
 export default Recipes
