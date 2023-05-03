@@ -24,9 +24,12 @@ function App() {
  
 <RecipeProvider>
   <IngredientsProvider>
-    <IngredientSearch/>
-    <Recipes/>
+  <IngredientSearch/>
+  <Recipes/>
   </IngredientsProvider>
+  
+    
+
 </RecipeProvider>
 
     

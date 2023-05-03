@@ -68,109 +68,109 @@ const Ingredients = () => {
 
   return (
     <div className="home-container">
-      <Navbar/>
-<div className="home-banner-container">
-  <div className="home-text-section">
-      <h3 className="primary-heading">
-        Whatcha Cooking, Good Looking?  </h3>
-      <p className="primary-text">
-        Add ingredients you have in your pantry to find recipes that contain them!           </p>
+      <Navbar />
+      <div className="home-banner-container">
+        <div className="home-text-section">
+          <h3 className="primary-heading">
+            Whatcha Cooking, Good Looking?  </h3>
+          <p className="primary-text">
+            Add ingredients you have in your pantry to find recipes that contain them!           </p>
 
-      <form>
+          <form>
 
-        <input
-          className="ingredientinput"
-          type="text"
-          placeholder="Ingredients"
-          onChange={handleIngredientEntry}
-          value={newIngredientEntry}
-        />
-      
-        <Button className="addbutton" onClick={handleInputChange} type="submit" size="lg">
-        Add
-        </Button>{' '}
-      </form>
-      
-      <ul className="flex flex-row flex-wrap w-full gap-5  items-center justify-around">
-          {ingredients.map((ingredient) => (
-            <li
-              key={ingredient}
-              value={ingredient}
-              className="flex flex-col items-center md:w-[50px] lg:w-[100px]"
-            >
-              <p className="text-indigo-600">{ingredient.toLowerCase()}</p>{" "}
-              <AiOutlineClose
-                className="hover:cursor-pointer hover:scale-125 hover:rotate-180 transition-all"
-                onClick={() => removeIngredient(ingredient)}
-              />
-            </li>
-          ))}
-        </ul>
-      <form>
-        <h4>Select Cuisine Type</h4>
-      </form>
-      <form>
-        <select onChange={changeCuisine}>
-          <option
-            value="Cuisine Type"
-            defaultValue="Cuisine Type"
-            disabled
-            hidden
-          >
-            Cuisine Type
-          </option>
-          {cuisines.map((cuisine) => (
-            <option key={cuisine} value={cuisine.toLowerCase()}>
-              {cuisine}
-            </option>
-          ))}
-        </select>
-      </form>
-      <form>
-        <h4>Select Meal Type</h4>
-      </form>
-      <form>
-        <select onChange={changeMeal}>
-          <option value="Meal Type" defaultValue="Meal Type" disabled hidden>
-            Meal Type
-          </option>
-          {meals.map((meal) => (
-            <option key={meal} value={meal.toLowerCase()}>
-              {meal}
-            </option>
-          ))}
-        </select>
-      </form>
-      <form>
-        <h4>Select Health or Allergy Concern</h4>
-      </form>
-      <form>
-        <select onChange={changeHealth} >
-          <option
-            value="Health Concerns"
-            defaultValue="Health Concerns"
-            disabled
-            hidden
-          >
-            Health Concerns
-          </option>
-          {health.map((type) => (
-            <option key={type} value={type.toLowerCase()}>
-              {type}
-            </option>
-          ))}
-        </select>
-      </form>
-      <form>
-        <button
-          type="submit"
-          className="secondary-button3"
-          onClick={apiCall}
-        >Search
-        </button>
-      </form>
+            <input
+              className="ingredientinput"
+              type="text"
+              placeholder="Ingredients"
+              onChange={handleIngredientEntry}
+              value={newIngredientEntry}
+            />
+
+            <Button className="addbutton" onClick={handleInputChange} type="submit" size="lg">
+              Add
+            </Button>{' '}
+          </form>
+
+          <ul className="flex flex-row flex-wrap w-full gap-5  items-center justify-around">
+            {ingredients.map((ingredient) => (
+              <li
+                key={ingredient}
+                value={ingredient}
+                className="flex flex-col items-center md:w-[50px] lg:w-[100px]"
+              >
+                <p className="">{ingredient.toLowerCase()}</p>{" "}
+                <AiOutlineClose
+                  className="hover:cursor-pointer hover:scale-125 hover:rotate-180 transition-all"
+                  onClick={() => removeIngredient(ingredient)}
+                />
+              </li>
+            ))}
+          </ul>
+          <form>
+            <h4>Select Cuisine Type</h4>
+          </form>
+          <form>
+            <select onChange={changeCuisine}>
+              <option
+                value="Cuisine Type"
+                defaultValue="Cuisine Type"
+                disabled
+                hidden
+              >
+                Cuisine Type
+              </option>
+              {cuisines.map((cuisine) => (
+                <option key={cuisine} value={cuisine.toLowerCase()}>
+                  {cuisine}
+                </option>
+              ))}
+            </select>
+          </form>
+          <form>
+            <h4>Select Meal Type</h4>
+          </form>
+          <form>
+            <select onChange={changeMeal}>
+              <option value="Meal Type" defaultValue="Meal Type" disabled hidden>
+                Meal Type
+              </option>
+              {meals.map((meal) => (
+                <option key={meal} value={meal.toLowerCase()}>
+                  {meal}
+                </option>
+              ))}
+            </select>
+          </form>
+          <form>
+            <h4>Select Health or Allergy Concern</h4>
+          </form>
+          <form>
+            <select onChange={changeHealth} >
+              <option
+                value="Health Concerns"
+                defaultValue="Health Concerns"
+                disabled
+                hidden
+              >
+                Health Concerns
+              </option>
+              {health.map((type) => (
+                <option key={type} value={type.toLowerCase()}>
+                  {type}
+                </option>
+              ))}
+            </select>
+          </form>
+          <form>
+            <button
+              type="submit"
+              className="secondary-button3"
+              onClick={apiCall}
+            >Search
+            </button>
+          </form>
+        </div>
       </div>
-</div>
 
     </div>)
 }
