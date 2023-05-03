@@ -1,10 +1,12 @@
 import React, { useState } from "react"
+import { Routes, Route } from 'react-router-dom';
 import "./App.css";
 import Login from "./Components/Login";
 import Recipes from "./Components/Recipe";
 import IngredientSearch from "./Components/IngredientSearch"
 import IngredientsProvider from "./Context/IngredientsContext";
 import RecipeProvider from "./Context/RecipesContext";
+import ShoppingList from "./Components/ShoppingList";
 import Register from "./Components/Register"
 import Home from "./Components/Home";
 import About from "./Components/About"
@@ -19,15 +21,13 @@ function App() {
 
   return (
     <div className="App">
-<Home/>
-<About/>
-    <RecipeProvider>
-      <IngredientsProvider>
-        <IngredientSearch/>
-        <Recipes/>
-      </IngredientsProvider>
-    </RecipeProvider>
-  
+ 
+<RecipeProvider>
+  <IngredientsProvider>
+    <IngredientSearch/>
+    <Recipes/>
+  </IngredientsProvider>
+</RecipeProvider>
 
     
     

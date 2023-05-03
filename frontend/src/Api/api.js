@@ -3,6 +3,7 @@ import axios from "axios";
 var api_id = "b32e19cc";
 var api_key = "3ffa0c39dc608a75d262981ddd7f3e2b";
 
+
 const ingredientCheck = (arr) => {
   let ingredientEntry = [arr[0]];
   if (arr.length < 1) {
@@ -45,10 +46,7 @@ const mealTypeEntry = (input) => {
 const apiQuery = async (queryIngredients, health, cuisine, meal) => {
 
   var apiUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${ingredientCheck(
-    queryIngredients
-  )}&app_id=${api_id}&app_key=${api_key}${healthEntry(health)}${cuisineEntry(
-    cuisine
-  )}${mealTypeEntry(meal)}`;
+    queryIngredients)}&app_id=${api_id}&app_key=${api_key}${healthEntry(health)}${cuisineEntry(cuisine)}${mealTypeEntry(meal)}`;
   const response = await axios.get(apiUrl);
   const recipesResponse = response.data.hits;
   const recipeInfo = recipesResponse.map((recipe) => {

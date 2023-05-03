@@ -552,3 +552,11 @@ video{
 .secondary-button3:hover {
   background-color: black;
 }
+
+.recipecard{
+  display: flex;
+  flex-direction: column;
+align-items: center;
+}
+
+
