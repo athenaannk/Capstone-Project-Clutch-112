@@ -44,9 +44,12 @@ const Work = () => {
             <p>{data.text}</p>
           </div>
         ))}
-      </div>
+    
+      
     </div>
-  );
-};
+</div>
+  )
+        }
 
-export default Work;
+        export default Work
+    

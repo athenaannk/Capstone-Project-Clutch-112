@@ -23,32 +23,37 @@
   }
 }
 
-.logincontainer {
+
+video {
   display: flex;
-  margin-top: 170px;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: stretch
+}
+.wrapper{
+  display: flex;
   align-items: center;
-  width: 75%;
-  font-size: large;
+  justify-content: center;
+  margin: auto;
 
 }
 
-.loginfooter {
-  background-color: rgb(36, 204, 36);
+.columnstat {
+  justify-content: center;
+  float: left;
+  width: 33.33%;
+  align-items: center;
 }
 
-.footer1 {
-  margin-right: 30px;
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.footer2 {
-  margin-right: 30px;
+.searchimg{
+  width: 100%;
 }
 
-.footer3 {
-  margin-right: 30px;
-}
 
 .loginbutton {
   padding: .9rem 3rem;
@@ -65,8 +70,8 @@
 }
 
 .imglogin {
-
-
+  margin-top: -15px;
+  width: 50%;
   justify-content: center;
 }
 
@@ -84,64 +89,11 @@
   justify-content: center;
 }
 
-/* .auth-form-container, .login-form, .register-form{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  font-size: x-large;
-  font: raleway;
+h5 {
+  font-size: large;
+  margin-top: -50px;
+  margin-bottom: 10px;
 }
-
-
-
-label{
-  text-align: left;
-  padding: 1rem, 0;
-}
-
-.register-input, .login-input {
-  margin: 1rem, 0;
-}
-
-.register-button, .login-button{
-  padding: .9rem 3rem;
-margin-top: 10px;
-    color: white;
-    background-color: rgb(28, 26, 26);
-    outline: none;
-    border: none;
-    border-radius: 5rem;
-    font-size: 2.1rem;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.2s;
-}
-
-.register-button, .login-button:hover {
-  background-color: rgb(36, 204, 36);
-}
-
-.register-button2, .login-button2{
-  padding: .9rem 3rem;
-  margin-top: 10px;
-    color: white;
-    background-color: rgb(28, 26, 26);
-    outline: none;
-    border: none;
-    border-radius: 5rem;
-    font-size: 2.1rem;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.2s;
-}
-
-.register-button2, .login-button2:hover {
-  background-color: rgb(36, 204, 36);
-} */
-
 
 
 img {
@@ -198,7 +150,7 @@ nav {
 
 .primary-button1 {
   padding: .9rem 3rem;
-
+  margin-right: 10px;
   color: white;
   background-color: rgb(28, 26, 26);
   outline: none;
@@ -225,6 +177,20 @@ nav {
   transition: 0.2s;
 }
 
+.primary-button3 {
+  padding: .9rem 3rem;
+  margin-right: 10px;
+  color: white;
+  background-color: rgb(28, 26, 26);
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+  font-size: 2.1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
 .primary-button1:hover {
   background-color: rgb(36, 204, 36);
 }
@@ -233,6 +199,9 @@ nav {
   background-color: rgb(36, 204, 36);
 }
 
+.primary-button3:hover {
+  background-color: rgb(36, 204, 36);
+}
 .navbar-menu-container svg {
   font-size: 2.5rem;
   cursor: pointer;
@@ -246,20 +215,40 @@ nav {
   display: flex;
 }
 
+.home-banner-container1 {
+  margin-top: -80px;
+  margin-left: 160px;
+  margin-right: 60px;
+  position: relative;
+  display: flex;
+}
+
+
 .home-bannerImage-container {
   position: absolute;
   right: -170px;
-  z-index: -2;
+  z-index: -3;
   max-width: 700px;
 }
 
 .home-image-section {
-  max-width: 600px;
+  min-width: 600px;
   flex: 1;
 }
 
 
+
 .home-text-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.home-text-section2 {
+  margin-left: 180px;
+  margin-top: -80px;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -272,6 +261,7 @@ nav {
   color: #4c4c4c;
   max-width: 600px;
 }
+
 
 .primary-text {
   font-size: clamp(1rem, 3vw, 1.5rem);
@@ -401,9 +391,7 @@ footer {
 
 
 
-.forgot {
-  font-size: small;
-}
+
 
 .register {
   font-size: small;
@@ -541,24 +529,17 @@ video {
   background-color: black;
 }
 
-.recipecard {
-  margin-top: 30px;
-
- display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-
-}
 
 
-figure{
+
+figure {
   display: flex;
   margin-bottom: 25px;
 
 }
 
 .url {
-  
+
   color: black;
   font-weight: 400;
 
@@ -589,8 +570,15 @@ figure{
   font-weight: 800;
 }
 
-
-
+.recipecard{
+flex-wrap: 2;
+  min-width: 600px;
+  max-width: 600px;
+  max-height: 500px;
+}
+.recipeimg{
+  height: 100%
+}
 ul {
 
   display: inline-block;
@@ -614,4 +602,8 @@ ul {
 
 .bookbutton:hover {
   background-color: rgb(36, 204, 36);
+}
+
+.cardcard {
+  margin-top: 50px;
 }

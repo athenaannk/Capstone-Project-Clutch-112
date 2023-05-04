@@ -1,13 +1,14 @@
 import React, { useState } from "react"
 import { Routes, Route } from 'react-router-dom';
 import "./App.css";
-import Login from "./Components/Login";
+import Login from "./Components/Auth/Login";
+import Register from "./Components/Auth/Register"
+import AuthDetails from "./Components/Auth/AuthDetails";
 import Recipes from "./Components/Recipe";
 import IngredientSearch from "./Components/IngredientSearch"
 import IngredientsProvider from "./Context/IngredientsContext";
 import RecipeProvider from "./Context/RecipesContext";
 import ShoppingList from "./Components/ShoppingList";
-import Register from "./Components/Register"
 import Home from "./Components/Home";
 import About from "./Components/About"
 import Work from "./Components/Work";
@@ -21,13 +22,14 @@ function App() {
 
   return (
     <div className="App">
- 
+<Home/>
 <RecipeProvider>
   <IngredientsProvider>
     <IngredientSearch/>
     <Recipes/>
   </IngredientsProvider>
 </RecipeProvider>
+
 
     
     
