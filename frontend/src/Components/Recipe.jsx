@@ -1,5 +1,6 @@
 import React from "react";
 import ShoppingList from "./ShoppingList";
+import { Link } from "react-router-dom";
 
 
 
@@ -12,7 +13,9 @@ const Recipes = () => {
   const mappedRecipes = !recipes
     ? ""
     : recipes.map((recipe, index) => (
-      <li
+      <row className="mx-auto">
+      <ul >
+      <li 
 
         key={recipe + index}
         title={recipe.label}
@@ -20,15 +23,18 @@ const Recipes = () => {
         ingredients={recipe.ingredients}>
 
 
-        <div className="recipecard mx-auto column" style={{border: '1px solid black'}}>
-          <h1 className="recipecard-title">{`${recipe.label}`}</h1>
+        <div className="recipecard mx-auto" style={{border: '1px solid black'}}>
 
-          <figure className="px-10 pt-10">
-            <img src={`${recipe.image}`} alt="recipeimage" />
-          </figure>
+          <div className="">
+           <Link to={`${recipe.url}`} >
+           <img src={`${recipe.image}`} alt="recipeimage" />
+           </Link>
+          </div>
           <div className="recipecard-body">
             <div className="recipecard-ingredients">
               <ol>
+              <h1 className="recipecard-title">{`${recipe.label}`}</h1>
+
                 <h2>Ingredients</h2>
                 {recipe.ingredients.map(ingredient => (<ul className="checkbox"><input type="checkbox" />{ingredient.text}</ul>))}
               </ol>
@@ -37,7 +43,7 @@ const Recipes = () => {
               <button className="shoppingbutton mx-auto" >Add to Shopping List</button>
             </div>
             <div className="recipecard-actions">
-              <a href={`${recipe.url}`} className="url" target="_blank" rel="noreferrer">Recipe Link</a>
+              <button className="bookbutton mx-auto" >Bookmark Recipe</button>
 
             </div>
 
@@ -46,6 +52,8 @@ const Recipes = () => {
 
         </div>
       </li>
+      </ul>
+      </row>
     )
     )
 

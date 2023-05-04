@@ -1,67 +1,34 @@
-import React from 'react';
-import Logo from "../Assets/logo.png"
-import Video from "../Assets/video.mp4"
-import {
-  MDBBtn,
-  MDBContainer,
-  MDBCard,
-  MDBCardBody,
-  MDBCardImage,
-  MDBRow,
-  MDBCol,
-  MDBIcon,
-  MDBInput
-}
-from 'mdb-react-ui-kit';
+// import React, { useEffect } from 'react';
 
-function Login() {
-  return (
-    <MDBContainer className="logincontainer">
+// import * as firebaseui from 'firebaseui'
+// import 'firebaseui/dist/firebaseui.css'
+// var firebase = require('firebase');
 
-      <MDBCard>
-        <MDBRow className=''>
+// var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
-          <MDBCol md='7'>
-          <video
-          src= {Video}
-          controls
-          muted
-          autoPlay={"autoplay"}
-          preLoad="auto"
-          loop
-        > something</video>          </MDBCol>
+// const Login = (props) => {
+//   useEffect(()=>{
+//     const ui= firebaseui.auth.AuthUI.getInstance() || new firebaseui.auth.AuthUI(props.auth)
+//     ui.start('.firebase-auth-container',{
+//       signInOptions: [
+//         {
+//           provider: firebase.auth.EmailAuthProvider.PROVIDER_ID
 
-          <MDBCol md='4'>
-            <MDBCardBody className='d-flex flex-column'>
+         
+//         }
+//       ],
+//       signInSuccessUrl: '/authenticated',
+//     });
+//   },[props.auth]);
+//   return (
+//     <>
+//     <div>Login</div>
+//     <div className={"firebase-auth-container"}></div>
+//     </>
+//   )
+// }
 
-              <div className='imglogin d-flex'>
-                <span> 
-                <img src={Logo} ></img>
-                </span>
-              </div>
-
-              <h5 className="signin fw-bold my-4 pb-3 mx-auto" style={{letterSpacing: '4px'}}>Sign into your account</h5>
-
-                <MDBInput className="inputlogin" label='Email address' id='formControlLg' type='email' size="lg"/>
-                <MDBInput className="inputlogin" label='Password' id='formControlLg' type='password' size= "lg"/>
-
-              <MDBBtn className="loginbutton mb-4 px-5" color='dark' size='lg'>Login</MDBBtn>
-              <a className="forgot small text-muted" href="#!">Forgot password?</a>
-              <p className="register mb-5 pb-lg-2" style={{color: '#393f81'}}>Don't have an account? <a href="#!" style={{color: '#393f81'}}>Register here</a></p>
-
-        
-
-            </MDBCardBody>
-          </MDBCol>
-
-        </MDBRow>
-      </MDBCard>
-
-    </MDBContainer>
-  );
-}
-
-export default Login;
+// export default Login;
 // import React from 'react';
 // import Loginbackground from "../Assets/loginbackground.png"
 // import {MDBContainer, MDBCol, MDBRow, MDBBtn, MDBIcon, MDBInput, MDBCheckbox } from 'mdb-react-ui-kit';
