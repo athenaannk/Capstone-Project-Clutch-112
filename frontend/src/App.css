@@ -149,9 +149,26 @@ nav {
   width: 75%;
 }
 
+.hithere{
+  font-size: medium;
+  margin-right: 15px
+}
 .primary-button1 {
   padding: .9rem 3rem;
   margin-right: 10px;
+  color: white;
+  background-color: rgb(28, 26, 26);
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+  font-size: 2.1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+.primary-button11 {
+  padding: .9rem 3rem;
+  margin-right: 160px;
   color: white;
   background-color: rgb(28, 26, 26);
   outline: none;

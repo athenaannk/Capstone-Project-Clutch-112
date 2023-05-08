@@ -1,18 +1,18 @@
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration, replace it with your project keys
+// Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBj8Xl_9vjVugZ3FA6asXo_aWQbVSrnTOo",
-    authDomain: "capstone-project-fc695.firebaseapp.com",
-    projectId: "capstone-project-fc695",
-    storageBucket: "capstone-project-fc695.appspot.com",
-    messagingSenderId: "541299067363",
-    appId: "1:541299067363:web:7af7cbb79aae2fda4238d6"
+  apiKey: "AIzaSyD1AAjeSYtmsdutaZUjLVlGbSvtFQUOwFI",
+  authDomain: "penniless-pantry-c1691.firebaseapp.com",
+  databaseURL: "https://penniless-pantry-c1691-default-rtdb.firebaseio.com",
+  projectId: "penniless-pantry-c1691",
+  storageBucket: "penniless-pantry-c1691.appspot.com",
+  messagingSenderId: "482802176087",
+  appId: "1:482802176087:web:6caf4ee142c4963edf5312"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// Initialize Firebase Authentication and get a reference to the service
-export const auth = getAuth(app);

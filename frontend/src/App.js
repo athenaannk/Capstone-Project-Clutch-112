@@ -1,9 +1,8 @@
 import React, { useState } from "react"
 import { Routes, Route } from 'react-router-dom';
 import "./App.css";
-import Login from "./Components/Auth/Login";
-import Register from "./Components/Auth/Register"
-import AuthDetails from "./Components/Auth/AuthDetails";
+
+
 import Recipes from "./Components/Recipe";
 
 import RecipeProvider from "./Context/RecipesContext";
@@ -26,7 +25,7 @@ function App() {
 
 
 
-<EnterIngredients/>
+<HomePage/>
 
 
     

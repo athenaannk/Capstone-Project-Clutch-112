@@ -68,15 +68,8 @@ const renderStores = (filterTerm) => {
         name,
         phone,
         address: { addressLine1, city, state, zipCode, county },
-        hours: {
-          sunday,
-          monday,
-          tuesday,
-          wednesday,
-          thursday,
-          friday,
-          saturday,
-        },
+  
+        
       }
     ) => {
       return (
@@ -87,15 +80,7 @@ const renderStores = (filterTerm) => {
 			<h2>${name}</h2>
       <p>${addressLine1}, ${city}, ${state} ${county} ${zipCode}</p>
 			<p>Phone: ${phone}</p>
-			<p>Opening Hours:</p>
-			<ul>
-      <li>Monday: ${monday.open} AM - ${monday.close} PM</li>
-      <li>Tuesday: ${tuesday.open} AM - ${tuesday.close} PM</li>
-      <li>Wednesday: ${wednesday.open} AM - ${wednesday.close} PM</li>
-      <li>Thursday: ${thursday.open} AM - ${thursday.close} PM</li>
-      <li>Friday: ${friday.open} AM - ${friday.close} PM</li>
-      <li>Saturday: ${saturday.open} AM - ${saturday.close} PM</li>
-      <li>Sunday: ${sunday.open} AM - ${sunday.close} PM</li>
+	
 			</ul>
 		</div>
 	</div>

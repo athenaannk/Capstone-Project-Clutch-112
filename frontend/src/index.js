@@ -4,19 +4,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom';
 import ProviderLayer from './ProviderLayer';
 import { FirebaseAppProvider } from 'reactfire';
-import { getAuth } from "firebase/auth"
-import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBj8Xl_9vjVugZ3FA6asXo_aWQbVSrnTOo",
-  authDomain: "capstone-project-fc695.firebaseapp.com",
-  projectId: "capstone-project-fc695",
-  storageBucket: "capstone-project-fc695.appspot.com",
-  messagingSenderId: "541299067363",
-  appId: "1:541299067363:web:7af7cbb79aae2fda4238d6"
+  apiKey: "AIzaSyD1AAjeSYtmsdutaZUjLVlGbSvtFQUOwFI",
+  authDomain: "penniless-pantry-c1691.firebaseapp.com",
+  projectId: "penniless-pantry-c1691",
+  storageBucket: "penniless-pantry-c1691.appspot.com",
+  messagingSenderId: "482802176087",
+  appId: "1:482802176087:web:6caf4ee142c4963edf5312"
 };
-
-const app = initializeApp(firebaseConfig);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

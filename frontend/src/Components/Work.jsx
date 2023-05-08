@@ -15,15 +15,16 @@ const Work = () => {
     },
     {
       image: List,
-      title: "Create Shopping List",
-      text: "Found a recipe you like? Print out ingredients you need to complete the recipe!",
+      title: "Bookmark",
+      text: "Found a recipe you like? Bookmark it and save it!",
     },
     {
       image: Sale,
-      title: "Connect to Your Local Grocery Store",
-      text: "Search your local grocery store fliers to find the ingredients you need at their cheapest prices!",
-    },
+      title: "Connect to Your Local Kroger",
+      text: "Search ingredients at your local grocery Kroger to check current prices and promotions!",
+    }
   ];
+
   return (
     <div className="work-section-wrapper">
       <div className="work-section-top">
@@ -31,7 +32,7 @@ const Work = () => {
         <h1 className="primary-heading">How It Works</h1>
         <p className="primary-text">
          Three. Simple. Steps. </p>
-         <p className="primary-text">Enter ingredients you have. Create a shopping list of ingredients you need. Explore local grocery store fliers to find them at their cheapest prices!
+         <p className="primary-text">Enter ingredients you have! Bookmark your favorite recipes! Explore local Kroger store to find current pricing and promotions on ingredients you need!
         </p>
       </div>
       <div className="work-section-bottom">
