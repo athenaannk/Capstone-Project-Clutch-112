@@ -82,7 +82,7 @@ const Ingredients = () => {
           <img src={pan} alt="" />
         </div>
       </div>
-      <div className="home-text-section2">
+
 
       <form>
         <input
@@ -92,18 +92,19 @@ const Ingredients = () => {
           onChange={handleIngredientEntry}
           value={newIngredientEntry}
         />
-
+</form>
+<form>
         <Button className="addbutton" onClick={handleInputChange} type="submit" size="lg">
           Add
         </Button>{' '}
       </form>
 
-      <ul className="flex flex-row flex-wrap w-full gap-5  items-center justify-around">
+      <form className="listing">
         {ingredients.map((ingredient) => (
-          <li
+          <li className="listing"
             key={ingredient}
             value={ingredient}
-            className="flex flex-col items-center md:w-[50px] lg:w-[100px]"
+        
           >
             <p className="">{ingredient.toLowerCase()}</p>{" "}
             <AiOutlineClose
@@ -112,7 +113,7 @@ const Ingredients = () => {
             />
           </li>
         ))}
-      </ul>
+      </form>
       <form>
         <h4>Select Cuisine Type</h4>
       </form>
@@ -178,8 +179,7 @@ const Ingredients = () => {
       </form>
     </div>
     
-    
-</div>
+
     
 
   )

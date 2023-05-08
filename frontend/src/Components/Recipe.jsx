@@ -1,5 +1,4 @@
 import React from "react";
-import ShoppingList from "./ShoppingList";
 import { Link } from "react-router-dom";
 
 
@@ -14,7 +13,7 @@ const Recipes = () => {
     ? ""
     : recipes.map((recipe, index) => (
 
-      <div className="mx-auto">
+      <div>
 
         <ul >
           <li
@@ -41,9 +40,7 @@ const Recipes = () => {
                     {recipe.ingredients.map(ingredient => (<ul className="checkbox"><input type="checkbox" />{ingredient.text}</ul>))}
                   </ol>
                 </div>
-                <div>
-                  <button className="shoppingbutton mx-auto" >Add to Shopping List</button>
-                </div>
+              
                 <div className="recipecard-actions">
                   <button className="bookbutton mx-auto" >Bookmark Recipe</button>
 

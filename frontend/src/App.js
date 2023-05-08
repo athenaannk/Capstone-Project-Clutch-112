@@ -5,13 +5,13 @@ import Login from "./Components/Auth/Login";
 import Register from "./Components/Auth/Register"
 import AuthDetails from "./Components/Auth/AuthDetails";
 import Recipes from "./Components/Recipe";
-import IngredientSearch from "./Components/IngredientSearch"
-import IngredientsProvider from "./Context/IngredientsContext";
+
 import RecipeProvider from "./Context/RecipesContext";
-import ShoppingList from "./Components/ShoppingList";
-import Home from "./Components/Home";
-import About from "./Components/About"
-import Work from "./Components/Work";
+import SaleSearch from "./Components/SaleSearch";
+import StoreSearch from "./Components/StoreSearch";
+import HomePage from "./Views/Home";
+import EnterIngredients from "./Views/EnterIngredients";
+
 import Footer from "./Components/Footer";
 
 
@@ -22,13 +22,11 @@ function App() {
 
   return (
     <div className="App">
-<Home/>
-<RecipeProvider>
-  <IngredientsProvider>
-    <IngredientSearch/>
-    <Recipes/>
-  </IngredientsProvider>
-</RecipeProvider>
+
+
+
+
+<EnterIngredients/>
 
 
     

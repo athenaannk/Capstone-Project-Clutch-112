@@ -13,7 +13,7 @@ const Navbar2 = () => {
       <div className="navbar-links-container">
      
       <button className="primary-button3">Bookmark</button>
-        <button className="primary-button3" >Shopping List</button>
+
 
         <button className="primary-button3" >Log Out</button>
 
