@@ -5,7 +5,7 @@ const clientSecret = `5xs8b7IBmkiiA10SKaTfk5logSqiA9TJ7iMY3cjX`;
 
 let _stores = [];
 let token = ``;
-const SaleSearch = () => {
+const storeSearch = () => {
     const [zipCode, setZipCode] = useState('');
 
 const getToken = async () => {
@@ -126,4 +126,4 @@ return (
       </form>
       </div>)
 }
-export default SaleSearch
+export default storeSearch

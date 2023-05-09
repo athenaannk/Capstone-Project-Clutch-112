@@ -119,10 +119,13 @@ img {
 body {
   max-width: 100%;
   overflow-x: hidden;
+
 }
 
 body {
   background-color: white;
+  background: linear-gradient(to bottom, #ffffff, #ffffff, #ffffff,rgb(125, 244, 125));
+
 }
 
 nav {
