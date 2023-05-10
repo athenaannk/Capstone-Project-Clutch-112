@@ -1,34 +1,63 @@
-import { React } from "react";
-import { Link } from "react-router-dom";
-import { useUser, useFirestoreCollectionData, useFirestore } from "reactfire";
-import { useRecipesContext } from "../Context/RecipesContext";
+import React, { useState, useEffect } from "react";
+import { getAuth } from "firebase/auth";
+import { getDatabase, ref, onValue } from "firebase/database";
+import Navbar from "./Navbar";
 
-const BookmarkedRecipes = () => {
-  const user = useUser();
-  const bookmarksRef = useFirestore()
-    .collection("bookmarks")
-    .doc(user.uid)
-    .collection("recipes");
-  const { data: bookmarks } = useFirestoreCollectionData(
-    bookmarksRef.orderBy("label")
-  );
+const BookmarkedRecipe = () => {
+  const [bookmarks, setBookmarks] = useState([]);
+
+  useEffect(() => {
+    const database = getDatabase();
+    const auth = getAuth();
+    const user = auth.currentUser;
+
+    // Exit early if the user isn't authenticated
+    if (!user) return;
+
+    const bookmarksRef = ref(database, `users/${user.uid}/bookmarks`);
+    onValue(bookmarksRef, (snapshot) => {
+      const bookmarksData = snapshot.val();
+      if (!bookmarksData) {
+        // Reset bookmarks state if there are no bookmarks
+        setBookmarks([]);
+        return;
+      }
+      // Convert the bookmarks data into an array and set it as state
+      const bookmarksArray = Object.entries(bookmarksData).map(([key, value]) => ({
+        id: key,
+        ...value,
+      }));
+      setBookmarks(bookmarksArray);
+    });
+  }, []);
 
   return (
     <div>
-      <h1>My Bookmarked Recipes</h1>
-      {!bookmarks ? (
-        <p>No bookmarked recipes found.</p>
-      ) : (
-        <ul>
-          {bookmarks.map((bookmark) => (
-            <li key={bookmark.id}>
-              <Link to={`/recipes/${bookmark.id}`}>{bookmark.label}</Link>
-            </li>
-          ))}
-        </ul>
-      )}
+      <Navbar/>
+      <h1>Bookmarked Recipes</h1>
+      {bookmarks.length === 0 && <p>No bookmarks yet!</p>}
+      {bookmarks.map((bookmark) => (
+        <div key={bookmark.id}>
+          <h2>{bookmark.title}</h2>
+          <img src={bookmark.image} alt={bookmark.title} />
+          <h3>Ingredients</h3>
+          <ul>
+            {bookmark.ingredients.map((ingredient, index) => (
+              <li key={index}>{ingredient}</li>
+            ))}
+          </ul>
+          <h3>Total Nutrients</h3>
+          <ul>
+            {Object.entries(bookmark.totalNutrients).map(([key, value]) => (
+              <li key={key}>
+                {key}: {value}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
   );
 };
 
-export default BookmarkedRecipes;
+export default BookmarkedRecipe;

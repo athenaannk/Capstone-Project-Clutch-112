@@ -9,6 +9,7 @@ import SaleSearch from "./Components/SaleSearch";
 import StoreSearch from "./Components/StoreSearch";
 import HomePage from "./Views/Home";
 import EnterIngredients from "./Views/EnterIngredients";
+import BookmarkedRecipe from "./Components/BookmarkedRecipes";
 
 import Footer from "./Components/Footer";
 
@@ -20,8 +21,8 @@ function App() {
 
   return (
     <div className="App">
-
-<EnterIngredients/>  
+<EnterIngredients/>
+<BookmarkedRecipe/>  
     
     </div>
   );

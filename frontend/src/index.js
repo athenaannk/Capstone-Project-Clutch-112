@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom';
 import ProviderLayer from './ProviderLayer';
@@ -14,8 +14,7 @@ const firebaseConfig = {
   appId: "1:482802176087:web:6caf4ee142c4963edf5312",
   databaseURL: "https://penniless-pantry-c1691-default-rtdb.firebaseio.com",
 };
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <FirebaseAppProvider  firebaseConfig={firebaseConfig}>

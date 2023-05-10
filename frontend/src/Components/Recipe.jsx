@@ -1,58 +1,53 @@
-import { React, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import {
-  useFirebaseApp,
-  useUser,
-  useFirestoreDocData,
-  useFirestore,
-} from "reactfire";
 import { useRecipesContext } from "../Context/RecipesContext";
-
-const Bookmark = ({ recipe }) => {
-  const user = useUser();
-  const [isBookmarked, setIsBookmarked] = useState(false);
-  const bookmarkRef = useFirestore()
-    .collection("bookmarks")
-    .doc(user.uid)
-    .collection("recipes")
-    .doc(recipe.id);
-
-  const handleBookmark = async () => {
-    if (!user) {
-      alert("Please sign in to bookmark recipes.");
-      return;
-    }
-
-    try {
-      // Check if the recipe is already bookmarked
-      const bookmarkDoc = await bookmarkRef.get();
-      if (bookmarkDoc.exists) {
-        setIsBookmarked(true);
-        return;
-      }
-
-      // Add the recipe to the user's bookmarks
-      await bookmarkRef.set(recipe);
-      setIsBookmarked(true);
-    } catch (error) {
-      console.error(error);
-      alert("Failed to bookmark recipe.");
-    }
-  };
-
-  useFirestoreDocData(bookmarkRef).subscribe((doc) => {
-    setIsBookmarked(!!doc);
-  });
-  return (
-    <button className="book" onClick={handleBookmark} disabled={isBookmarked}>
-      {isBookmarked ? "Bookmarked!" : "Bookmark"}
-    </button>
-  );
-};
+import { getAuth } from "firebase/auth";
+import { getDatabase, ref, push, set } from "firebase/database";
 
 const Recipes = () => {
   const { recipes } = useRecipesContext();
   console.log(recipes);
+
+  const database = getDatabase();
+  const auth = getAuth();
+  
+  const handleBookmarkClick = async (event, recipe) => {
+    event.preventDefault();
+  
+    const { label, image, ingredients } = recipe;
+  
+    const user = auth.currentUser;
+    const uid = user.uid;
+  
+    const dbRef = ref(database, `users/${uid}/bookmarks`);
+  
+    const totalNutrients = { ...recipe.totalNutrients };
+  
+    // Replace dots in keys with underscores
+    Object.keys(totalNutrients).forEach((key) => {
+      const newKey = key.replace(/\./g, "_");
+      if (newKey !== key) {
+        totalNutrients[newKey] = totalNutrients[key];
+        delete totalNutrients[key];
+      }
+    });
+  
+    try {
+      const newBookmarkRef = push(dbRef);
+      await set(newBookmarkRef, {
+        title: label,
+        image: image,
+        ingredients: ingredients,
+        totalNutrients: totalNutrients,
+      });
+      console.log("Bookmark added successfully!");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
+  
+  
 
   const mappedRecipes = !recipes
     ? ""
@@ -60,21 +55,29 @@ const Recipes = () => {
         <div>
           <ul>
             <li
-              key={recipe + index}
+              key={recipe.id + index}
               title={recipe.label}
               image={recipe.image}
               ingredients={recipe.ingredients}
             >
-              <div className="recipecard d-flex" style={{ border: "1px solid black" }}>
+              <div
+                className="recipecard d-flex"
+                style={{ border: "1px solid black" }}
+              >
                 <div className="d-flex">
                   <Link to={`${recipe.url}`}>
-                    <img className="recipeimg" src={`${recipe.image}`} alt="recipeimage" />
+                    <img
+                      className="recipeimg"
+                      src={`${recipe.image}`}
+                      alt="recipeimage"
+                    />
                   </Link>
                 </div>
                 <div className="recipecard-body">
                   <div className="recipecard-ingredients">
                     <ol>
                       <h1 className="recipecard-title">{`${recipe.label}`}</h1>
+
                       <h2>Ingredients</h2>
                       {recipe.ingredients.map((ingredient) => (
                         <ul className="checkbox">
@@ -84,8 +87,14 @@ const Recipes = () => {
                       ))}
                     </ol>
                   </div>
+
                   <div className="recipecard-actions">
-                    <Bookmark recipe={recipe} />
+                    <button
+                      className="bookbutton mx-auto"
+                      onClick={(event) => handleBookmarkClick(event,recipe)}
+                    >
+                      Bookmark Recipe
+                    </button>
                   </div>
                 </div>
               </div>
@@ -102,9 +111,12 @@ const Recipes = () => {
         </div>
         <div className="about-section-text-container">
           <h1 className="primary-heading">Check Out Your Recipe Cards</h1>
-          <p className="primary-text">Click the image to see more recipe information!</p>
+          <p className="primary-text">
+            Click the image to see more recipe information!
+          </p>
         </div>
       </div>
+
       {!mappedRecipes ? (
         <div className="primary-text"></div>
       ) : (
