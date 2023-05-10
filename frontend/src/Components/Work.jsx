@@ -2,26 +2,26 @@
  
 
 import React from "react";
-import Search from "../Assets/search.jpg";
-import List from "../Assets/list.jpg";
-import Sale from "../Assets/sale.jpg";
+import Search from "../Assets/search.png";
+import Bookmark from "../Assets/bookmark.png";
+import Sale from "../Assets/sale.png";
 
 const Work = () => {
   const workInfoData = [
     {
       image: Search,
       title: "Search Recipes",
-      text: "Enter ingredients you have on hand to find recipes containing all or most of what you have!",
+      text: "Enter ingredients to find recipes containing all or most of what you have!",
     },
     {
-      image: List,
+      image: Bookmark,
       title: "Bookmark",
-      text: "Found a recipe you like? Bookmark it and save it!",
+      text: "Found a recipe you like? Bookmark and save it!",
     },
     {
       image: Sale,
-      title: "Connect to Your Local Kroger",
-      text: "Search ingredients at your local grocery Kroger to check current prices and promotions!",
+      title: "Kroger",
+      text: "Check prices and promotions at your local Kroger!",
     }
   ];
 
@@ -32,7 +32,7 @@ const Work = () => {
         <h1 className="primary-heading">How It Works</h1>
         <p className="primary-text">
          Three. Simple. Steps. </p>
-         <p className="primary-text">Enter ingredients you have! Bookmark your favorite recipes! Explore local Kroger store to find current pricing and promotions on ingredients you need!
+         <p className="primary-text">Enter ingredients you have! Bookmark your favorite recipes! Explore your local Kroger store to find current pricing and promotions on the ingredients you need!
         </p>
       </div>
       <div className="work-section-bottom">
@@ -41,8 +41,8 @@ const Work = () => {
             <div className="info-boxes-img-container">
               <img src={data.image} alt="" />
             </div>
-            <h2>{data.title}</h2>
-            <p>{data.text}</p>
+            <h2 className="worktitle">{data.title}</h2>
+            <p className="worktext">{data.text}</p>
           </div>
         ))}
     

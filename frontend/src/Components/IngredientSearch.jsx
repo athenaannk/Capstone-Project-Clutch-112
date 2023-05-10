@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import pan from "../Assets/pan.jpeg"
-import Navbar2 from "./Navbar2";
+import Navbar from "./Navbar";
 import { AiOutlineClose } from "react-icons/ai";
 import { useIngredientsContext } from "../Context/IngredientsContext";
 import { useRecipesContext } from "../Context/RecipesContext";
@@ -8,7 +8,6 @@ import { cuisines, meals, health } from "../Api/api";
 import Button from 'react-bootstrap/Button';
 
 import apiQuery from "../Api/api";
-import { Navbar } from "react-bootstrap";
 
 const Ingredients = () => {
   const [newIngredientEntry, setNewIngredientEntry] = useState("");
@@ -70,7 +69,7 @@ const Ingredients = () => {
 
   return (
     <div className="home-container">
-      <Navbar2 />
+      <Navbar />
       <div className="home-banner-container1">
         <div className="home-text-section">
           <h1 className="primary-heading">
