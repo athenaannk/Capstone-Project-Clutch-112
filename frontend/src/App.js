@@ -4,7 +4,6 @@ import "./App.css";
 
 
 import Recipes from "./Components/Recipe";
-
 import RecipeProvider from "./Context/RecipesContext";
 import SaleSearch from "./Components/SaleSearch";
 import StoreSearch from "./Components/StoreSearch";
@@ -22,14 +21,7 @@ function App() {
   return (
     <div className="App">
 
-
-
-
-<SaleSearch/>
-
-
-
-    
+<EnterIngredients/>  
     
     </div>
   );

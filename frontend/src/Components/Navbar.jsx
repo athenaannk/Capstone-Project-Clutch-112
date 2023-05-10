@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../Assets/logo.png";
-import Orange from "../Assets/orange.png"
+import { Link } from "react-router-dom";
+import SaleSearch from "./SaleSearch";
 import { useContext, useEffect } from "react";
 import { useAuth, useUser, useSigninCheck, useDatabase } from "reactfire";
 import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
@@ -75,7 +76,7 @@ const Navbar = props => {
           </button>
           {showDropdown && (
             <ul className="dropdown">
-              <li>Kroger</li>
+             <Link to={SaleSearch}><li>Kroger</li></Link> 
               <li>Settings</li>
               <li>Logout</li>
             </ul>

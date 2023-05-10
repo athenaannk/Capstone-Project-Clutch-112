@@ -54,10 +54,6 @@ const Recipes = () => {
   const { recipes } = useRecipesContext();
   console.log(recipes);
 
-
-
- 
-
   const mappedRecipes = !recipes
     ? ""
     : recipes.map((recipe, index) => (
@@ -118,4 +114,4 @@ const Recipes = () => {
   );
 };
 
-export default Recipes
+export default Recipes;
