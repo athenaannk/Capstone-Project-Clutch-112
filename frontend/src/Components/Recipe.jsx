@@ -14,7 +14,7 @@ const Recipes = () => {
   const handleBookmarkClick = async (event, recipe) => {
     event.preventDefault();
 
-    const { label, image, ingredients } = recipe;
+    const { label, image, ingredients, url } = recipe;
 
     const user = auth.currentUser;
     const uid = user.uid;
@@ -39,6 +39,7 @@ const Recipes = () => {
         image: image,
         ingredients: ingredients,
         totalNutrients: totalNutrients,
+        url: url
       });
       setIsBookmarked(true); // update state when bookmark is added
       console.log("Bookmark added successfully!");
@@ -93,6 +94,8 @@ const Recipes = () => {
                     >
                       Bookmark Recipe
                     </button>
+                    {isBookmarked && (
+                      <span className="bookmark-message">Recipe bookmarked!</span>)}
                   </div>
                 </div>
               </div>

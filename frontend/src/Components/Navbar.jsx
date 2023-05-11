@@ -5,6 +5,7 @@ import { useContext, useEffect } from "react";
 import { useAuth, useUser, useSigninCheck, useDatabase } from "reactfire";
 import { signOut } from "firebase/auth";
 import { useState } from "react";
+import {FiCornerRightDown} from "react-icons/fi";
 
 const Navbar = props => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -40,16 +41,16 @@ const Navbar = props => {
       {
         user ? (
         <div>
-     <span className="hithere">Hi there, {user.displayName}!</span>
+     <span className="hithere">Hungry for More?!<FiCornerRightDown/></span>
      
 <div className="dropdown-container">
-          <button className="primary-button1" onClick={toggleDropdown}>
-            Menu
+          <button className="primary-button15" onClick={toggleDropdown}>
+            Menu Options
           </button>
           {showDropdown && (
             <ul className="dropdown">
-             <Link to="/salesearch"><li>Kroger</li></Link> 
-             <Link to="/bookmarkedrecipes" ><li>Settings</li></Link>
+             <Link to="/salesearch"><li>Search Kroger</li></Link> 
+             <Link to="/bookmarkedrecipes" ><li>Bookmarked Recipes</li></Link>
               <li onClick={signout}>Logout</li>
             </ul>
           )}

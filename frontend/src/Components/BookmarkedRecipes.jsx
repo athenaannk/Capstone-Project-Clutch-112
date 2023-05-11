@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getAuth } from "firebase/auth";
+import { Link } from "react-router-dom";
 import { getDatabase, ref, onValue } from "firebase/database";
 import Navbar from "./Navbar";
 import { useUser } from "reactfire";
@@ -35,14 +35,16 @@ const BookmarkedRecipe = () => {
   }, []);
 
   return (
-    <div>
+    <div className="bookmarkeds">
       <Navbar/>
-      <h1>Bookmarked Recipes</h1>
-      {bookmarks.length === 0 && <p>No bookmarks yet!</p>}
+      
+      <h1 className="primary-heading22">Bookmarked Recipes</h1>
+      {bookmarks.length === 0 && <p className="nomark">No bookmarks yet!</p>}
       {bookmarks.map((bookmark) => (
-        <div key={bookmark.id}>
-          <h2>{bookmark.title}</h2>
+        <div className="bookid" key={bookmark.id}>
+          <h2 classname="booktitle">{bookmark.title}</h2>
           <img src={bookmark.image} alt={bookmark.title} />
+          <Link to={`${bookmark.url}`}>  <a href={bookmark.url} className="viewbook" target="_blank" rel="noopener noreferrer">View Recipe</a> </Link>
 
         </div>
       ))}
