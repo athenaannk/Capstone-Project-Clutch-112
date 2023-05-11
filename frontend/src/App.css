@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: raleway;
+
 }
 
 .divider:after,
@@ -92,6 +93,10 @@ video {
 .inputlogin {
   text-align: center;
   justify-content: center;
+}
+.loginlogo{
+width: 20% ;
+margin:auto
 }
 
 h5 {
@@ -223,6 +228,22 @@ nav {
   transition: 0.2s;
 }
 
+.primary-button14 {
+  padding: .5rem 1rem;
+  margin-left: 10px;
+  color: white;
+  background-color: rgb(28, 26, 26);
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+  font-size: 2.1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+
+
 .primary-button11 {
   padding: .9rem 3rem;
   margin-right: 160px;
@@ -320,10 +341,14 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  text-decoration: none;
+
 }
 
 .home-text-section2 {
   margin-left: 180px;
+  text-decoration: none;
+
 
   flex: 1;
   display: flex;
@@ -346,6 +371,8 @@ nav {
   max-width: 500px;
   color: #6a6a6a;
   margin: 1.5rem 0rem;
+  text-decoration: none;
+
 }
 
 .secondary-button {
@@ -362,15 +389,20 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 
 .secondary-button svg {
   margin-left: 0.75rem;
   font-size: 1.5rem;
+  text-decoration: none;
+
 }
 
 .secondary-button:hover {
   background-color: black;
+  text-decoration: none;
+
 }
 
 .about-section-container {

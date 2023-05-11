@@ -17,7 +17,7 @@ Broke & Hungry?          </h1>
           <p className="primary-text">
 Minimal ingredients and even less funds?
           </p>
-          <Link to="/register"><button className="secondary-button">
+          <Link to="/register"><button className="primary-button1">
             Sign Up! <FiArrowRight />
           </button></Link>
         </div>

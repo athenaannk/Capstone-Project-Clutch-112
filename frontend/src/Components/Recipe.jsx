@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useRecipesContext } from "../Context/RecipesContext";
 import { getAuth } from "firebase/auth";
@@ -9,19 +9,20 @@ const Recipes = () => {
 
   const database = getDatabase();
   const auth = getAuth();
-  
+  const [isBookmarked, setIsBookmarked] = useState(false); // add state for message
+
   const handleBookmarkClick = async (event, recipe) => {
     event.preventDefault();
-  
+
     const { label, image, ingredients } = recipe;
-  
+
     const user = auth.currentUser;
     const uid = user.uid;
-  
+
     const dbRef = ref(database, `users/${uid}/bookmarks`);
-  
+
     const totalNutrients = { ...recipe.totalNutrients };
-  
+
     // Replace dots in keys with underscores
     Object.keys(totalNutrients).forEach((key) => {
       const newKey = key.replace(/\./g, "_");
@@ -30,7 +31,7 @@ const Recipes = () => {
         delete totalNutrients[key];
       }
     });
-  
+
     try {
       const newBookmarkRef = push(dbRef);
       await set(newBookmarkRef, {
@@ -39,14 +40,12 @@ const Recipes = () => {
         ingredients: ingredients,
         totalNutrients: totalNutrients,
       });
+      setIsBookmarked(true); // update state when bookmark is added
       console.log("Bookmark added successfully!");
     } catch (error) {
       console.log(error);
     }
   };
-  
-  
-  
 
   const mappedRecipes = !recipes
     ? ""
@@ -90,7 +89,7 @@ const Recipes = () => {
                   <div className="recipecard-actions">
                     <button
                       className="bookbutton mx-auto"
-                      onClick={(event) => handleBookmarkClick(event,recipe)}
+                      onClick={(event) => handleBookmarkClick(event, recipe)}
                     >
                       Bookmark Recipe
                     </button>
