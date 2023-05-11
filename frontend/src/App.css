@@ -221,7 +221,9 @@ nav {
   margin-left: 40px;
 }
 
-
+.bookmark-message{
+  font-size: medium;
+}
 .about {
   width: 75%;
 }
