@@ -25,7 +25,7 @@ const About = () => {
        Connect to your local grocery stores to find the items you need at their lowest price!
         </p>
         <div className="about-buttons-container">
-          <Link to="/register"><button className="primary-button1">Sign Up!<FiArrowRight /></button></Link>
+          <Link to="/register"><button className="primary-button1">Sign Up! <FiArrowRight /></button></Link>
      
         </div>
       </div>

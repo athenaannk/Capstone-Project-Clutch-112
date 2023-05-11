@@ -35,10 +35,10 @@ const Navbar = props => {
     <div className="nav-logo-container">
         <img src={Logo} alt="" />
       </div>
-      
+      {console.log(user)}
     
       {
-        isLoggedIn ? (
+        user ? (
         <div>
      <span className="hithere">Hi there, {user.displayName}!</span>
      
