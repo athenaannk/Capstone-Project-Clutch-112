@@ -1,9 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import BannerImage from "../Assets/backgroundimage.jpeg";
 import Navbar from "./Navbar";
 import { FiArrowRight } from "react-icons/fi";
 
 const Home = () => {
+  
   return (
     <div className="home-container">
       <Navbar />
@@ -15,9 +17,9 @@ Broke & Hungry?          </h1>
           <p className="primary-text">
 Minimal ingredients and even less funds?
           </p>
-          <button className="secondary-button">
-            Sign Up! <FiArrowRight />{" "}
-          </button>
+          <Link to="/register"><button className="secondary-button">
+            Sign Up! <FiArrowRight />
+          </button></Link>
         </div>
         <div className="home-image-section">
           <img src={BannerImage} alt="" />

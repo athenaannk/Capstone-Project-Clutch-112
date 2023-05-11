@@ -1,8 +1,8 @@
 import React from 'react'
 import RecipeProvider from '../Context/RecipesContext'
 import IngredientsProvider from '../Context/IngredientsContext'
-import IngredientSearch from '../Components/IngredientSearch'
-import Recipes from '../Components/Recipe'
+import IngredientSearch from './IngredientSearch'
+import Recipes from './Recipe'
 const EnterIngredients = () => {
   return (
     <RecipeProvider>

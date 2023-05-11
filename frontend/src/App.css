@@ -23,6 +23,10 @@
   }
 }
 
+.loginregister {
+  font-size: small;
+}
+
 
 video {
   display: flex;
@@ -721,3 +725,12 @@ ul {
 .carousel img.active {
   opacity: 1;
 }
+
+link {
+  text-decoration: none;
+  
+
+}
+
+button {
+  text-decoration: none;}

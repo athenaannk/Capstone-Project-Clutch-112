@@ -1,10 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import AboutBackground from "../Assets/background.jpeg";
 import { FiArrowRight } from "react-icons/fi";
 
 
-
 const About = () => {
+
+  
   return (
     <div className="about-section-container">
   
@@ -23,7 +25,7 @@ const About = () => {
        Connect to your local grocery stores to find the items you need at their lowest price!
         </p>
         <div className="about-buttons-container">
-          <button className="secondary-button">Sign Up!<FiArrowRight />{" "}</button>
+          <Link to="/register"><button className="secondary-button">Sign Up!<FiArrowRight /></button></Link>
      
         </div>
       </div>

@@ -1,43 +1,34 @@
 import React from "react";
 import Logo from "../Assets/logo.png";
-import { Link } from "react-router-dom";
-import SaleSearch from "./SaleSearch";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { useAuth, useUser, useSigninCheck, useDatabase } from "reactfire";
-import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+import { signOut } from "firebase/auth";
 import { useState } from "react";
-
 
 const Navbar = props => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
 
-    const { data: user } = useUser();  // this gets our user object
+  const { data: user } = useUser();  // this gets our user object
   const { signinStatus } = useSigninCheck();  // is there a user signed in or not?
   const auth = useAuth();
 
   const db = useDatabase();
 
-  const signin = async () => {
-      let provider = new GoogleAuthProvider();
-      let u = await signInWithPopup(auth, provider);
-      setIsLoggedIn(true);
-      console.log(u);
-      return u
-
-    }
-    const signout = async () => {
-        await signOut(auth);
-        setIsLoggedIn(false);
-        setShowDropdown(false);
-
-    }
-
-
+  const signout = async () => {
+      await signOut(auth);
+      setIsLoggedIn(false);
+      setShowDropdown(false);
+  }
 
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
   };
+
+  useEffect(() => {
+      setIsLoggedIn(signinStatus === 'SignedIn')
+  }, [signinStatus])
 
   return (
     <nav>
@@ -57,23 +48,22 @@ const Navbar = props => {
           </button>
           {showDropdown && (
             <ul className="dropdown">
-             <Link to={SaleSearch}><li>Kroger</li></Link> 
-              <li>Settings</li>
-              <li>Logout</li>
+             <Link to="/salesearch"><li>Kroger</li></Link> 
+             <Link to="/bookmarkedrecipes" ><li>Settings</li></Link>
+              <li onClick={signout}>Logout</li>
             </ul>
           )}
-          <button className="primary-button11" onClick={signout}>
-            Sign out
-          </button>
         </div>
         </div>
       ) : (
-        <button className="primary-button11" onClick={signin}>
+        <Link to="/login"><button className="primary-button11">
           Sign In
-        </button>
+        </button></Link>
       )}
+      
     </nav>
-  )
-}
-
+  
+  );
+};
+      
 export default Navbar;

@@ -17,6 +17,7 @@ const BookmarkedRecipe = () => {
     const bookmarksRef = ref(database, `users/${user.uid}/bookmarks`);
     onValue(bookmarksRef, (snapshot) => {
       const bookmarksData = snapshot.val();
+      console.log(bookmarksData)
       if (!bookmarksData) {
         // Reset bookmarks state if there are no bookmarks
         setBookmarks([]);

@@ -6,7 +6,6 @@ import { getDatabase, ref, push, set } from "firebase/database";
 
 const Recipes = () => {
   const { recipes } = useRecipesContext();
-  console.log(recipes);
 
   const database = getDatabase();
   const auth = getAuth();

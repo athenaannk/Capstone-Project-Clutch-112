@@ -1,10 +1,8 @@
-
- 
-
 import React from "react";
 import Search from "../Assets/search.png";
 import Bookmark from "../Assets/bookmark.png";
 import Sale from "../Assets/sale.png";
+
 
 const Work = () => {
   const workInfoData = [

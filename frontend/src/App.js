@@ -1,30 +1,30 @@
-import React, { useState } from "react"
-import { Routes, Route } from 'react-router-dom';
+import React from "react";
 import "./App.css";
-
-
-import Recipes from "./Components/Recipe";
-import RecipeProvider from "./Context/RecipesContext";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./Components/HomePage.jsx";
+import Register from "./Components/Register";
+import Login from "./Components/Login";
+import EnterIngredients from "./Components/EnterIngredients";
 import SaleSearch from "./Components/SaleSearch";
-import StoreSearch from "./Components/StoreSearch";
-import HomePage from "./Views/Home";
-import EnterIngredients from "./Views/EnterIngredients";
-import BookmarkedRecipe from "./Components/BookmarkedRecipes";
-
-import Footer from "./Components/Footer";
-
-
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import BookmarkedRecipes from "./Components/BookmarkedRecipes";
 
 function App() {
-
   return (
+   
     <div className="App">
-<EnterIngredients/>
-<BookmarkedRecipe/>  
-    
+
+     
+        <Routes>
+          <Route children path="/" element={<HomePage />} />
+          <Route children path="/register" element={<Register />} />
+          <Route children path="/login" element={<Login />} />
+          <Route children path="/enteringredients" element={<EnterIngredients />} />
+          <Route children path="/salesearch" element={<SaleSearch />} />
+          <Route children path="/bookmarkedrecipes" element={<BookmarkedRecipes />} />
+        </Routes>
+   
     </div>
+  
   );
 }
 
